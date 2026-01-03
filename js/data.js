@@ -5,18 +5,50 @@
 // Coffee Bar Menu Data
 const coffeeMenuData = {
   categories: [
-    { id: "hot-beverages", name: "Hot Beverages" },
-    { id: "tea", name: "Tea" },
-    { id: "cold-drinks", name: "Cold Drinks" },
+    {
+      id: "hot-beverages",
+      name: "Hot Beverages",
+      image: "../assets/hot-beverages.jpeg",
+    },
+    { id: "tea", name: "Tea", image: "../assets/tea.jpeg" },
+    {
+      id: "cold-drinks",
+      name: "Cold Drinks",
+      image: "../assets/cold-drinks.jpeg",
+    },
     { id: "add-on", name: "Add-On" },
     { id: "shakes", name: "Shakes" },
-    { id: "refreshers", name: "Refreshers" },
-    { id: "fruit-smoothies", name: "Fruit Smoothies" },
-    { id: "spirits-glass", name: "Spirits (Glass)" },
-    { id: "spirits-bottles", name: "Spirits (Bottles)" },
-    { id: "fresh-juices", name: "Fresh Juices" },
-    { id: "croissants", name: "Croissants" },
-    { id: "desserts", name: "Desserts" },
+    {
+      id: "refreshers",
+      name: "Refreshers",
+      image: "../assets/refreshers.jpeg",
+    },
+    {
+      id: "fruit-smoothies",
+      name: "Fruit Smoothies",
+      image: "../assets/fruit-smoothies.jpeg",
+    },
+    {
+      id: "spirits-glass",
+      name: "Spirits (Glass)",
+      image: "../assets/spirits-glass.jpeg",
+    },
+    {
+      id: "spirits-bottles",
+      name: "Spirits (Bottles)",
+      image: "../assets/spirits-bottles.jpeg",
+    },
+    {
+      id: "fresh-juices",
+      name: "Fresh Juices",
+      image: "../assets/fresh-juices.jpeg",
+    },
+    {
+      id: "croissants",
+      name: "Croissants",
+      image: "../assets/croissants.jpeg",
+    },
+    { id: "desserts", name: "Desserts", image: "../assets/desserts.jpeg" },
   ],
   items: [
     // HOT BEVERAGES
@@ -799,7 +831,7 @@ const restoMenuData = {
       price: 7.0,
       category: "breakfast",
       ingredients: "Seasonal fruits & honey",
-      image: "../img/dreamy-greek-yogurt.jpeg",
+      image: "../assets/dreamy-greek-yogurt.jpeg",
     },
     {
       id: "halloumi-pesto",
@@ -807,7 +839,7 @@ const restoMenuData = {
       price: 7.0,
       category: "breakfast",
       ingredients: "Ciabatta bread with cucumber & tomato",
-      image: "../img/halloumi-pesto.jpeg",
+      image: "../assets/halloumi-pesto.jpeg",
     },
     {
       id: "goat-cheese-bruschetta",
@@ -815,7 +847,7 @@ const restoMenuData = {
       price: 8.0,
       category: "breakfast",
       ingredients: "Rocca, red apple, walnuts & balsamic",
-      image: "../img/goat-cheese-bruschetta.jpeg",
+      image: "../assets/goat-cheese-bruschetta.jpeg",
     },
     {
       id: "eggs-your-style",
@@ -831,7 +863,7 @@ const restoMenuData = {
       category: "breakfast",
       ingredients:
         "Chocolate syrup, banana, strawberry, whipped cream, maple syrup",
-      image: "../img/fluffy-pancakes.jpeg",
+      image: "../assets/fluffy-pancakes.jpeg",
     },
     {
       id: "steak-eggs",
@@ -839,7 +871,7 @@ const restoMenuData = {
       price: 11.0,
       category: "breakfast",
       ingredients: "Juicy seared steak with perfectly cooked eggs",
-      image: "../img/steak-eggs.jpeg",
+      image: "../assets/steak-eggs.jpeg",
     },
     {
       id: "croissant-zaatar-resto",
@@ -885,7 +917,7 @@ const restoMenuData = {
       price: 13.0,
       category: "starters",
       ingredients: "Breaded shrimps tossed in house dynamite sauce",
-      image: "../img/blazing-dynamite-shrimps.jpeg",
+      image: "../assets/blazing-dynamite-shrimps.jpeg",
     },
     {
       id: "avocado-on-toast",
@@ -893,7 +925,7 @@ const restoMenuData = {
       price: 7.0,
       category: "starters",
       ingredients: "Avocado mix, cherry tomato & parmesan",
-      image: "../img/avocado-on-toast.jpeg",
+      image: "../assets/avocado-on-toast.jpeg",
     },
     {
       id: "smoked-salmon-carpaccio",
@@ -901,7 +933,7 @@ const restoMenuData = {
       price: 14.0,
       category: "starters",
       ingredients: "Dill, capers, lemon, olive oil & toast",
-      image: "../img/smoked-salmon-carpaccio.jpeg",
+      image: "../assets/smoked-salmon-carpaccio.jpeg",
     },
     {
       id: "tequenos",
@@ -915,21 +947,21 @@ const restoMenuData = {
       name: "Truffle Fries",
       price: 7.0,
       category: "starters",
-      image: "../img/truffle-fries-resto.jpeg",
+      image: "../assets/truffle-fries-resto.jpeg",
     },
     {
       id: "golden-fries",
       name: "Golden Fries",
       price: 5.0,
       category: "starters",
-      image: "../img/golden-fries.jpeg",
+      image: "../assets/golden-fries.jpeg",
     },
     {
       id: "edamame",
       name: "Edamame",
       price: 7.0,
       category: "starters",
-      image: "../img/edamame.jpeg",
+      image: "../assets/edamame.jpeg",
     },
     {
       id: "dumplings-shrimps",
@@ -946,7 +978,7 @@ const restoMenuData = {
       category: "salads",
       ingredients:
         "Greens, spinach, red apple, walnuts, dry figs, cherry tomato & balsamic",
-      image: "../img/goat-cheese-salad.jpeg",
+      image: "../assets/goat-cheese-salad.jpeg",
     },
     {
       id: "quinoa-bowl",
@@ -955,7 +987,7 @@ const restoMenuData = {
       category: "salads",
       ingredients:
         "Mixed greens, cherry tomato, dry figs, cranberry, almonds & citrus dressing",
-      image: "../img/quinoa-bowl.jpeg",
+      image: "../assets/quinoa-bowl.jpeg",
     },
     {
       id: "caesar-royal",
@@ -970,7 +1002,7 @@ const restoMenuData = {
       price: 12.0,
       category: "salads",
       ingredients: "Lettuce, croutons, parmesan & house Caesar sauce + Chicken",
-      image: "../img/caesar-royal-chicken.jpeg",
+      image: "../assets/caesar-royal-chicken.jpeg",
     },
     {
       id: "shrimp-salad",
@@ -979,7 +1011,7 @@ const restoMenuData = {
       category: "salads",
       ingredients:
         "Mixed greens, quinoa, cherry tomato, Indian onion, avocado & herbal dressing",
-      image: "../img/shrimp-salad.jpeg",
+      image: "../assets/shrimp-salad.jpeg",
     },
     {
       id: "fusion-crab-salad",
@@ -987,7 +1019,7 @@ const restoMenuData = {
       price: 9.0,
       category: "salads",
       ingredients: "Carrot, cucumber, strawberry, cabbage & Asian dressing",
-      image: "../img/fusion-crab-salad.jpeg",
+      image: "../assets/fusion-crab-salad.jpeg",
     },
 
     // PIZZA
@@ -1029,7 +1061,7 @@ const restoMenuData = {
       category: "sandwiches-burgers",
       ingredients:
         "Smoked turkey, turkey bacon, emmental, lettuce, tomato, pickles, avocado, mayo & Dijon",
-      image: "../img/reis-club-sandwich.jpeg",
+      image: "../assets/reis-club-sandwich.jpeg",
     },
     {
       id: "mighty-steak-sandwich",
@@ -1038,7 +1070,7 @@ const restoMenuData = {
       category: "sandwiches-burgers",
       ingredients:
         "Beef tenderloin, sourdough, onions, bell peppers, emmental & steak sauce",
-      image: "../img/mighty-steak-sandwich.jpeg",
+      image: "../assets/mighty-steak-sandwich.jpeg",
     },
     {
       id: "chicken-avo-wrap",
@@ -1047,7 +1079,7 @@ const restoMenuData = {
       category: "sandwiches-burgers",
       ingredients:
         "Grilled chicken breast, avocado mix, pickles, lettuce & honey mustard",
-      image: "../img/chicken-avo-wrap.jpeg",
+      image: "../assets/chicken-avo-wrap.jpeg",
     },
     {
       id: "reis-prime-burger",
@@ -1056,7 +1088,7 @@ const restoMenuData = {
       category: "sandwiches-burgers",
       ingredients:
         "Angus beef, cheddar cheese, lettuce, pickles, onion, tomato & house burger sauce",
-      image: "../img/reis-prime-burger.jpeg",
+      image: "../assets/reis-prime-burger.jpeg",
     },
 
     // MAIN DISH
@@ -1066,7 +1098,7 @@ const restoMenuData = {
       price: 18.0,
       category: "main-dish",
       ingredients: "Mushroom or pepper sauce",
-      image: "../img/steak-fries.jpeg",
+      image: "../assets/steak-fries.jpeg",
     },
     {
       id: "creamy-chicken-mushroom",
@@ -1074,7 +1106,7 @@ const restoMenuData = {
       price: 13.0,
       category: "main-dish",
       ingredients: "Grilled chicken breast, mushroom sauce & fries",
-      image: "../img/creamy-chicken-mushroom.jpeg",
+      image: "../assets/creamy-chicken-mushroom.jpeg",
     },
     {
       id: "grilled-jumbo-shrimps",
@@ -1082,7 +1114,7 @@ const restoMenuData = {
       price: 22.0,
       category: "main-dish",
       ingredients: "Marinated in unique flavors",
-      image: "../img/grilled-jumbo-shrimps.jpeg",
+      image: "../assets/grilled-jumbo-shrimps.jpeg",
     },
     {
       id: "grilled-salmon-miso",
@@ -1090,7 +1122,7 @@ const restoMenuData = {
       price: 22.0,
       category: "main-dish",
       ingredients: "With sautéed vegetables",
-      image: "../img/grilled-salmon-miso.jpeg",
+      image: "../assets/grilled-salmon-miso.jpeg",
     },
     {
       id: "addon-chicken",
@@ -1115,21 +1147,21 @@ const restoMenuData = {
       name: "Linguini Alfredo",
       price: 11.0,
       category: "main-dish",
-      image: "../img/linguini-alfredo.jpeg",
+      image: "../assets/linguini-alfredo.jpeg",
     },
     {
       id: "penne-arrabbiata",
       name: "Penne Arrabbiata",
       price: 8.0,
       category: "main-dish",
-      image: "../img/penne-arrabbiata.jpeg",
+      image: "../assets/penne-arrabbiata.jpeg",
     },
     {
       id: "linguini-pesto",
       name: "Linguini Pesto",
       price: 11.0,
       category: "main-dish",
-      image: "../img/linguini-pesto.jpeg",
+      image: "../assets/linguini-pesto.jpeg",
     },
 
     // SHISHA

@@ -2,7 +2,7 @@
    FILTER SYSTEM - SMOOTH ANIMATIONS
    ============================================ */
 
-let currentFilter = '*';
+let currentFilter = "*";
 let menuItems = [];
 
 // Initialize Filters
@@ -15,75 +15,74 @@ function initFilters(menuData) {
 
 // Render Filter Buttons (without Show All - that's handled separately)
 function renderFilterButtons(categories) {
-  const filterContainer = document.querySelector('.filter-container');
+  const filterContainer = document.querySelector(".filter-container");
   if (!filterContainer) return;
-  
+
   // Clear existing buttons
-  filterContainer.innerHTML = '';
-  
+  filterContainer.innerHTML = "";
+
   // Add category filter buttons (no "Show All" here)
-  categories.forEach(category => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.setAttribute('data-filter', `.filter-${category.id}`);
+  categories.forEach((category) => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn";
+    btn.setAttribute("data-filter", `.filter-${category.id}`);
     btn.textContent = category.name;
     filterContainer.appendChild(btn);
   });
-  
+
   // Render Category Grid
   renderCategoryGrid(categories);
 }
 
 // Render Category Grid (Celina-style visual cards)
 function renderCategoryGrid(categories) {
-  const gridContainer = document.getElementById('categoryGrid');
+  const gridContainer = document.getElementById("categoryGrid");
   if (!gridContainer) return;
-  
-  gridContainer.innerHTML = '';
-  
+
+  gridContainer.innerHTML = "";
+
   categories.forEach((category, index) => {
-    const card = document.createElement('div');
-    card.className = 'category-card';
-    card.setAttribute('data-category', category.id);
-    
-    // Alternate gradient colors for variety
-    const gradients = [
-      'linear-gradient(135deg, #e4c27a 0%, #8c735b 100%)',
-      'linear-gradient(135deg, #8c735b 0%, #574432 100%)',
-      'linear-gradient(135deg, #574432 0%, #e4c27a 100%)',
-      'linear-gradient(135deg, #a08060 0%, #574432 100%)'
-    ];
-    
+    const card = document.createElement("div");
+    card.className = "category-card";
+    card.setAttribute("data-category", category.id);
+
+    // Use image if available, otherwise use gradient
+    const fallbackGradient =
+      "linear-gradient(135deg, #e4c27a 0%, #8c735b 100%)";
+
     card.innerHTML = `
-      <div class="category-card-bg" style="background: ${gradients[index % 4]}">
-        ${category.image ? `<img src="${category.image}" alt="${category.name}">` : ''}
+      <div class="category-card-bg">
+        ${
+          category.image
+            ? `<img src="${category.image}" alt="${category.name}">`
+            : `<div class="category-card-gradient" style="background: ${fallbackGradient}"></div>`
+        }
       </div>
-      <div class="category-card-overlay">
-        <span class="category-card-title">${category.name}</span>
-      </div>
+      <div class="category-card-overlay"></div>
+      <span class="category-card-title">${category.name}</span>
     `;
-    
+
     // Click handler
-    card.addEventListener('click', () => {
+    card.addEventListener("click", () => {
       // Special case: Drinks & Desserts redirects to coffee menu
-      if (category.id === 'drinks-desserts') {
-        if (typeof handlePageTransition === 'function') {
-          handlePageTransition('coffee-menu.html');
+      if (category.id === "drinks-desserts") {
+        if (typeof handlePageTransition === "function") {
+          handlePageTransition("coffee-menu.html");
         } else {
-          window.location.href = 'coffee-menu.html';
+          window.location.href = "coffee-menu.html";
         }
         return;
       }
       selectCategory(category);
     });
-    
+
     gridContainer.appendChild(card);
   });
-  
+
   // Setup Show All button
-  const showAllBtn = document.getElementById('showAllBtn');
+  const showAllBtn = document.getElementById("showAllBtn");
   if (showAllBtn) {
-    showAllBtn.addEventListener('click', () => {
+    showAllBtn.addEventListener("click", () => {
       showAllCategories();
     });
   }
@@ -92,66 +91,66 @@ function renderCategoryGrid(categories) {
 // Select a category from grid
 function selectCategory(category) {
   const filter = `.filter-${category.id}`;
-  
+
   // Filter items
   filterMenuItems(filter);
-  
+
   // Update filter button active state
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(btn => {
-    btn.classList.remove('filter-active');
-    if (btn.getAttribute('data-filter') === filter) {
-      btn.classList.add('filter-active');
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach((btn) => {
+    btn.classList.remove("filter-active");
+    if (btn.getAttribute("data-filter") === filter) {
+      btn.classList.add("filter-active");
     }
   });
-  
+
   // Scroll to menu section
-  const menuContainer = document.getElementById('menuContainer');
+  const menuContainer = document.getElementById("menuContainer");
   if (menuContainer) {
     setTimeout(() => {
-      menuContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      menuContainer.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
   }
 }
 
 // Show all categories
 function showAllCategories() {
-  filterMenuItems('*');
-  
+  filterMenuItems("*");
+
   // Remove active state from all filter buttons
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(btn => {
-    btn.classList.remove('filter-active');
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach((btn) => {
+    btn.classList.remove("filter-active");
   });
 }
 
 // Setup Filter Listeners
 function setupFilterListeners() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-      
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
       // If Drinks & Desserts, redirect to coffee menu with transition
-      if (filter === '.filter-drinks-desserts') {
-        const transition = document.getElementById('pageTransition');
+      if (filter === ".filter-drinks-desserts") {
+        const transition = document.getElementById("pageTransition");
         if (transition) {
-          transition.classList.add('active');
+          transition.classList.add("active");
           setTimeout(() => {
-            window.location.href = 'coffee-menu.html';
+            window.location.href = "coffee-menu.html";
           }, 250);
         } else {
-          window.location.href = 'coffee-menu.html';
+          window.location.href = "coffee-menu.html";
         }
         return;
       }
-      
+
       filterMenuItems(filter);
-      
+
       // Update active state
-      filterButtons.forEach(b => b.classList.remove('filter-active'));
-      btn.classList.add('filter-active');
+      filterButtons.forEach((b) => b.classList.remove("filter-active"));
+      btn.classList.add("filter-active");
     });
   });
 }
@@ -159,49 +158,50 @@ function setupFilterListeners() {
 // Filter Menu Items with Isotope-like animation
 function filterMenuItems(filter) {
   currentFilter = filter;
-  const container = document.getElementById('menuContainer');
+  const container = document.getElementById("menuContainer");
   if (!container) return;
-  
-  const allItems = container.querySelectorAll('.menu-item');
-  
+
+  const allItems = container.querySelectorAll(".menu-item");
+
   // First: zoom out ALL items
   allItems.forEach((item) => {
-    item.style.transition = 'all 0.4s ease-out';
-    item.style.opacity = '0';
-    item.style.transform = 'scale(0.8)';
+    item.style.transition = "all 0.4s ease-out";
+    item.style.opacity = "0";
+    item.style.transform = "scale(0.8)";
   });
-  
+
   // After zoom out completes, prepare and show filtered items
   setTimeout(() => {
     let visibleIndex = 0;
-    
+
     allItems.forEach((item) => {
-      const matchesFilter = filter === '*' || item.classList.contains(filter.replace('.', ''));
-      
+      const matchesFilter =
+        filter === "*" || item.classList.contains(filter.replace(".", ""));
+
       if (matchesFilter) {
         // First set to hidden state before showing
-        item.style.display = '';
-        item.classList.remove('filtered-out');
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.5)';
-        item.style.transition = 'none'; // Remove transition temporarily
-        
+        item.style.display = "";
+        item.classList.remove("filtered-out");
+        item.style.opacity = "0";
+        item.style.transform = "scale(0.5)";
+        item.style.transition = "none"; // Remove transition temporarily
+
         // Force reflow
         item.offsetHeight;
-        
+
         // Now animate zoom in with stagger
         const delay = visibleIndex * 60;
         setTimeout(() => {
-          item.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-          item.style.opacity = '1';
-          item.style.transform = 'scale(1)';
+          item.style.transition = "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
         }, delay);
-        
+
         visibleIndex++;
       } else {
         // Hide item
-        item.classList.add('filtered-out');
-        item.style.display = 'none';
+        item.classList.add("filtered-out");
+        item.style.display = "none";
       }
     });
   }, 450);
@@ -209,37 +209,39 @@ function filterMenuItems(filter) {
 
 // Render Menu Items
 function renderMenuItems(items) {
-  const container = document.getElementById('menuContainer');
+  const container = document.getElementById("menuContainer");
   if (!container) return;
-  
-  container.innerHTML = '';
-  
+
+  container.innerHTML = "";
+
   // Group items by category
   const groupedItems = {};
-  items.forEach(item => {
+  items.forEach((item) => {
     if (!groupedItems[item.category]) {
       groupedItems[item.category] = [];
     }
     groupedItems[item.category].push(item);
   });
-  
+
   // Render items with category headers
-  Object.keys(groupedItems).forEach(categoryId => {
+  Object.keys(groupedItems).forEach((categoryId) => {
     const categoryItems = groupedItems[categoryId];
-    const category = getCurrentMenuData()?.categories?.find(c => c.id === categoryId);
-    
+    const category = getCurrentMenuData()?.categories?.find(
+      (c) => c.id === categoryId
+    );
+
     // Category Header
     if (category) {
-      const header = document.createElement('div');
+      const header = document.createElement("div");
       header.className = `menu-item menu-header-item filter-${categoryId}`;
       header.innerHTML = `
         <h2>${category.name.toUpperCase()}</h2>
       `;
       container.appendChild(header);
     }
-    
+
     // Category Items
-    categoryItems.forEach(item => {
+    categoryItems.forEach((item) => {
       const menuItem = createMenuItemElement(item, categoryId);
       container.appendChild(menuItem);
     });
@@ -248,38 +250,53 @@ function renderMenuItems(items) {
 
 // Create Menu Item Element (Celina-inspired card design)
 function createMenuItemElement(item, categoryId) {
-  const div = document.createElement('div');
-  div.className = `menu-item filter-${categoryId}${item.image ? '' : ' no-image'}`;
-  
+  const div = document.createElement("div");
+  div.className = `menu-item filter-${categoryId}${
+    item.image ? "" : " no-image"
+  }`;
+
   // Special handling for note items (like "Check Coffee Bar Menu")
   if (item.isNote) {
     div.innerHTML = `
       <div class="menu-content" style="justify-content: center;">
-        <span class="menu-item-name" style="text-align: center; font-size: 1.1rem;">${item.name}</span>
+        <span class="menu-item-name" style="text-align: center; font-size: 1.1rem;">${
+          item.name
+        }</span>
       </div>
-      ${item.ingredients ? `<div class="menu-ingredients" style="text-align: center; font-style: italic;">${item.ingredients}</div>` : ''}
+      ${
+        item.ingredients
+          ? `<div class="menu-ingredients" style="text-align: center; font-style: italic;">${item.ingredients}</div>`
+          : ""
+      }
       <a href="coffee-menu.html" class="add-to-cart-btn" style="text-decoration: none; display: inline-block; text-align: center;">
         View Coffee Bar Menu
       </a>
     `;
-    div.style.gridColumn = '1 / -1';
-    div.style.textAlign = 'center';
-    div.style.padding = '2rem';
-    div.style.background = 'linear-gradient(135deg, rgba(228, 194, 122, 0.1) 0%, rgba(228, 194, 122, 0.05) 100%)';
+    div.style.gridColumn = "1 / -1";
+    div.style.textAlign = "center";
+    div.style.padding = "2rem";
+    div.style.background =
+      "linear-gradient(135deg, rgba(228, 194, 122, 0.1) 0%, rgba(228, 194, 122, 0.05) 100%)";
     return div;
   }
-  
+
   // Category header items
   if (item.isHeader) {
     return div; // Headers are handled separately
   }
-  
+
   // Regular menu item card
-  const descriptionHtml = item.ingredients ? `<div class="menu-item-description">${item.ingredients}</div>` : '';
-  
+  const descriptionHtml = item.ingredients
+    ? `<div class="menu-item-description">${item.ingredients}</div>`
+    : "";
+
   div.innerHTML = `
     <button class="menu-item-close">&times;</button>
-    ${item.image ? `<div class="menu-item-image"><img src="${item.image}" alt="${item.name}"></div>` : ''}
+    ${
+      item.image
+        ? `<div class="menu-item-image"><img src="${item.image}" alt="${item.name}"></div>`
+        : ""
+    }
     <div class="menu-item-content">
       <div class="menu-item-name">${item.name}</div>
       ${descriptionHtml}
@@ -302,52 +319,57 @@ function createMenuItemElement(item, categoryId) {
       </div>
     </div>
   `;
-  
+
   // Add click event listeners
-  const viewBtn = div.querySelector('.view-item-btn');
-  const addBtn = div.querySelector('.add-to-cart-btn-small');
-  const closeBtn = div.querySelector('.menu-item-close');
-  
+  const viewBtn = div.querySelector(".view-item-btn");
+  const addBtn = div.querySelector(".add-to-cart-btn-small");
+  const closeBtn = div.querySelector(".menu-item-close");
+
   if (viewBtn) {
-    viewBtn.addEventListener('click', (e) => {
+    viewBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       // Trigger expand immediately - no delay
-      div.classList.add('expanding');
+      div.classList.add("expanding");
       expandMenuItem(div, item);
     });
   }
-  
+
   // Make entire card clickable for Quick View
-  div.addEventListener('click', (e) => {
+  div.addEventListener("click", (e) => {
     // Don't trigger if clicking on buttons
-    if (e.target.closest('.add-to-cart-btn-small') || e.target.closest('.menu-item-close')) {
+    if (
+      e.target.closest(".add-to-cart-btn-small") ||
+      e.target.closest(".menu-item-close")
+    ) {
       return;
     }
-    div.classList.add('expanding');
+    div.classList.add("expanding");
     expandMenuItem(div, item);
   });
-  
+
   if (addBtn) {
-    addBtn.addEventListener('click', (e) => {
+    addBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       // Use image if available, otherwise use the title element
-      const imgElement = div.querySelector('.menu-item-image img') || div.querySelector('.menu-item-name');
+      const imgElement =
+        div.querySelector(".menu-item-image img") ||
+        div.querySelector(".menu-item-name");
       addToCart(item, imgElement);
     });
   }
-  
+
   if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
+    closeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       closeExpandedItemFromButton(div);
     });
   }
-  
+
   // Add animation delay for staggered effect
   const index = Array.from(div.parentElement?.children || []).length;
   div.style.animationDelay = `${index * 0.08}s`;
-  div.classList.add('fade-in-up');
-  
+  div.classList.add("fade-in-up");
+
   return div;
 }
 
@@ -363,28 +385,28 @@ function expandMenuItem(element, item) {
     expandedClone = null;
   }
   if (originalElement) {
-    originalElement.style.opacity = '';
+    originalElement.style.opacity = "";
     originalElement = null;
   }
-  
+
   // Store reference to original
   originalElement = element;
-  
+
   // Create overlay if it doesn't exist
-  let overlay = document.querySelector('.menu-item-overlay');
+  let overlay = document.querySelector(".menu-item-overlay");
   if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.className = 'menu-item-overlay';
+    overlay = document.createElement("div");
+    overlay.className = "menu-item-overlay";
     document.body.appendChild(overlay);
   }
-  
+
   // Get the element's current position
   const rect = element.getBoundingClientRect();
-  
+
   // Create a clone for the modal
   expandedClone = element.cloneNode(true);
-  expandedClone.className = 'menu-item expanded-clone';
-  
+  expandedClone.className = "menu-item expanded-clone";
+
   // Set clone initial position (same as original)
   expandedClone.style.cssText = `
     position: fixed;
@@ -396,114 +418,116 @@ function expandMenuItem(element, item) {
     margin: 0;
     opacity: 1;
   `;
-  
+
   // Append clone to body
   document.body.appendChild(expandedClone);
-  
+
   // Dim the original slightly
-  element.style.opacity = '0.3';
-  element.classList.remove('expanding');
-  
+  element.style.opacity = "0.3";
+  element.classList.remove("expanding");
+
   // Prevent body scroll
-  document.body.style.overflow = 'hidden';
-  
+  document.body.style.overflow = "hidden";
+
   // Force reflow
   expandedClone.offsetHeight;
-  
+
   // Show overlay
-  overlay.style.display = 'block';
-  overlay.style.opacity = '0';
-  overlay.style.backdropFilter = 'blur(0px)';
+  overlay.style.display = "block";
+  overlay.style.opacity = "0";
+  overlay.style.backdropFilter = "blur(0px)";
   overlay.offsetHeight;
-  
-  overlay.style.transition = 'opacity 0.5s ease, backdrop-filter 0.5s ease';
-  overlay.style.opacity = '1';
-  overlay.style.backdropFilter = 'blur(8px)';
-  overlay.classList.add('active');
-  
+
+  overlay.style.transition = "opacity 0.5s ease, backdrop-filter 0.5s ease";
+  overlay.style.opacity = "1";
+  overlay.style.backdropFilter = "blur(8px)";
+  overlay.classList.add("active");
+
   // Animate clone to center
-  expandedClone.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-  expandedClone.style.top = '50%';
-  expandedClone.style.left = '50%';
-  expandedClone.style.transform = 'translate(-50%, -50%)';
-  expandedClone.style.width = 'min(90%, 600px)';
-  expandedClone.classList.add('expanded');
-  
+  expandedClone.style.transition = "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
+  expandedClone.style.top = "50%";
+  expandedClone.style.left = "50%";
+  expandedClone.style.transform = "translate(-50%, -50%)";
+  expandedClone.style.width = "min(90%, 600px)";
+  expandedClone.classList.add("expanded");
+
   // Setup close button on clone
-  const closeBtn = expandedClone.querySelector('.menu-item-close');
+  const closeBtn = expandedClone.querySelector(".menu-item-close");
   if (closeBtn) {
     closeBtn.onclick = (e) => {
       e.stopPropagation();
       closeExpandedClone();
     };
   }
-  
+
   // Setup add to cart on clone
-  const addBtn = expandedClone.querySelector('.add-to-cart-btn-small');
+  const addBtn = expandedClone.querySelector(".add-to-cart-btn-small");
   if (addBtn) {
     addBtn.onclick = (e) => {
       e.stopPropagation();
       // Use image if available, otherwise use the title element
-      const imgElement = expandedClone.querySelector('.menu-item-image img') || expandedClone.querySelector('.menu-item-name');
+      const imgElement =
+        expandedClone.querySelector(".menu-item-image img") ||
+        expandedClone.querySelector(".menu-item-name");
       addToCart(item, imgElement);
     };
   }
-  
+
   // Close on overlay click
   overlay.onclick = () => {
     closeExpandedClone();
   };
-  
+
   // Close on Escape key
   const escapeHandler = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       closeExpandedClone();
-      document.removeEventListener('keydown', escapeHandler);
+      document.removeEventListener("keydown", escapeHandler);
     }
   };
-  document.addEventListener('keydown', escapeHandler);
+  document.addEventListener("keydown", escapeHandler);
 }
 
 // Close the expanded clone
 function closeExpandedClone() {
-  const overlay = document.querySelector('.menu-item-overlay');
-  
+  const overlay = document.querySelector(".menu-item-overlay");
+
   if (!expandedClone) return;
-  
+
   // Instantly hide overlay
   if (overlay) {
-    overlay.style.display = 'none';
-    overlay.style.cssText = '';
-    overlay.classList.remove('active');
+    overlay.style.display = "none";
+    overlay.style.cssText = "";
+    overlay.classList.remove("active");
   }
-  
+
   // Reset body scroll
-  document.body.style.overflow = '';
-  
+  document.body.style.overflow = "";
+
   // Remove expanded class so !important doesn't block animation
-  expandedClone.classList.remove('expanded');
-  
+  expandedClone.classList.remove("expanded");
+
   // Keep it at center position without the class
-  expandedClone.style.position = 'fixed';
-  expandedClone.style.top = '50%';
-  expandedClone.style.left = '50%';
-  expandedClone.style.transform = 'translate(-50%, -50%)';
-  expandedClone.style.zIndex = '2000';
-  
+  expandedClone.style.position = "fixed";
+  expandedClone.style.top = "50%";
+  expandedClone.style.left = "50%";
+  expandedClone.style.transform = "translate(-50%, -50%)";
+  expandedClone.style.zIndex = "2000";
+
   // Force reflow
   expandedClone.offsetHeight;
-  
+
   // Now animate - shrink and drop through pipe
-  expandedClone.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 1, 1)';
-  expandedClone.style.transform = 'translate(-50%, 100vh) scale(0.2)';
-  expandedClone.style.opacity = '0';
-  
+  expandedClone.style.transition = "all 0.4s cubic-bezier(0.4, 0, 1, 1)";
+  expandedClone.style.transform = "translate(-50%, 100vh) scale(0.2)";
+  expandedClone.style.opacity = "0";
+
   // Restore original element
   if (originalElement) {
-    originalElement.style.opacity = '';
-    originalElement.classList.remove('expanding');
+    originalElement.style.opacity = "";
+    originalElement.classList.remove("expanding");
   }
-  
+
   // Remove clone after animation
   setTimeout(() => {
     if (expandedClone) {
@@ -530,4 +554,3 @@ function setMenuData(data) {
 function getCurrentMenuData() {
   return menuData;
 }
-
