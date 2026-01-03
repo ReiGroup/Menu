@@ -1,0 +1,135 @@
+/* ============================================
+   INDEX PAGE - LUXURY DESIGN
+   ============================================ */
+
+.index-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(228, 194, 122, 0.05) 0%,
+    rgba(87, 70, 50, 0.05) 100%
+  );
+}
+
+/* ========== Logo Section ========== */
+.logo-section {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  animation-delay: 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.main-logo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  filter: none;
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+  transition: var(--transition-smooth);
+}
+
+.main-logo:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* ========== Navigation Buttons ========== */
+.nav-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  animation-delay: 0.4s;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+}
+
+.btn-coffee,
+.btn-eating {
+  min-width: 200px;
+  width: 100%;
+  max-width: 280px;
+  text-decoration: none;
+  text-align: center !important;
+  padding: 1rem 1.5rem;
+}
+
+.btn-coffee span,
+.btn-eating span {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+.btn-coffee:hover {
+  border-color: var(--logo-gold);
+}
+
+.btn-eating:hover {
+  border-color: var(--logo-gold);
+}
+
+/* ========== Footer ========== */
+.index-footer {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--ingredients-color);
+  font-size: 0.85rem;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.index-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-credit {
+  margin-top: 0.3rem !important;
+}
+
+.footer-credit a {
+  color: var(--black);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-credit a:hover {
+  color: var(--logo-gold);
+  text-decoration: underline;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .main-logo {
+    max-width: 300px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-logo {
+    max-width: 250px;
+  }
+
+  .index-container {
+    padding: var(--spacing-md);
+  }
+}

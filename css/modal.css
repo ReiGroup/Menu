@@ -1,0 +1,249 @@
+/* ============================================
+   MODAL - ITEM DETAIL VIEW
+   ============================================ */
+
+/* ========== Modal Overlay ========== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modal-overlay::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ========== Modal Container ========== */
+.modal-container {
+  background: var(--white);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.9) translateY(20px) perspective(1000px) rotateX(10deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0) perspective(1000px) rotateX(0deg);
+}
+
+/* ========== Modal Close Button ========== */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--title-color);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close:hover {
+  background: var(--ingredients-color);
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* ========== Modal Image ========== */
+.modal-image-container {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, var(--logo-gold) 0%, var(--ingredients-color) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(228, 194, 122, 0.3) 0%, rgba(140, 115, 91, 0.3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--title-color);
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+/* ========== Modal Content ========== */
+.modal-content {
+  padding: var(--spacing-lg);
+}
+
+.modal-item-name {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.modal-item-price {
+  font-family: var(--font-body);
+  font-size: 1.8rem;
+  color: var(--logo-gold);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-item-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ingredients-color);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(140, 115, 91, 0.2);
+}
+
+/* ========== Modal Actions ========== */
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.modal-add-to-cart-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--logo-gold);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.modal-add-to-cart-btn:hover {
+  background: var(--title-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(228, 194, 122, 0.4);
+}
+
+.modal-add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+.modal-add-to-cart-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+/* ========== Quantity Selector (if needed) ========== */
+.modal-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.modal-quantity-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--ingredients-color);
+  background: transparent;
+  color: var(--title-color);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-quantity-btn:hover {
+  background: var(--logo-gold);
+  border-color: var(--logo-gold);
+  color: var(--white);
+}
+
+.modal-quantity-value {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .modal-container {
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: 12px;
+  }
+  
+  .modal-image-container {
+    height: 250px;
+  }
+  
+  .modal-content {
+    padding: var(--spacing-md);
+  }
+  
+  .modal-item-name {
+    font-size: 1.6rem;
+  }
+  
+  .modal-item-price {
+    font-size: 1.5rem;
+  }
+}
+
