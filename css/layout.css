@@ -583,6 +583,7 @@
   justify-content: center;
   gap: 0.5rem;
   transition: var(--transition-smooth);
+  white-space: nowrap;
   font-family: var(--font-title);
   font-size: 0.85rem;
   text-transform: uppercase;
