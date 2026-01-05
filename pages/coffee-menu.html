@@ -26,9 +26,28 @@
     <link rel="stylesheet" href="../css/modal.css" />
   </head>
   <body class="page-entering">
-    <!-- Page Transition Overlay -->
-    <div class="page-transition" id="pageTransition">
-      <img src="../assets/rei_group.PNG" alt="REI Group" />
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <img
+          src="../assets/rei_group.PNG"
+          alt="REI Group"
+          class="loading-logo"
+        />
+        <div class="loading-progress-container">
+          <div class="loading-progress-bar" id="loadingProgressBar"></div>
+        </div>
+        <div class="loading-percentage" id="loadingPercentage">0%</div>
+        <div class="loading-footer">
+          <p class="loading-copyright">
+            &copy; 2025 REI Group. All Rights Reserved
+          </p>
+          <p class="loading-credit">
+            Designed by
+            <a href="https://www.jpayoub.com" target="_blank">JP Ayoub</a>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="menu-page">
@@ -178,12 +197,12 @@
     </div>
 
     <!-- Scripts -->
+    <script src="../js/loading.js"></script>
     <script src="../js/data.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/filters.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/coffee-menu.js"></script>
     <script src="../js/animations.js"></script>
-    <script src="../js/page-transition.js"></script>
   </body>
 </html>

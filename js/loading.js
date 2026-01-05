@@ -106,13 +106,21 @@ function updateProgressBar() {
 // Hide loading screen
 function hideLoadingScreen() {
   const loadingScreen = document.getElementById('loadingScreen');
+  const body = document.body;
+  
+  // Remove page-entering class to show content
+  if (body) {
+    body.classList.remove('page-entering');
+    body.classList.add('page-ready');
+  }
+  
   if (loadingScreen) {
     loadingScreen.classList.add('hidden');
     setTimeout(() => {
       if (loadingScreen.parentNode) {
         loadingScreen.remove();
       }
-    }, 500);
+    }, 250);
   }
 }
 

@@ -66,11 +66,7 @@ function renderCategoryGrid(categories) {
     card.addEventListener("click", () => {
       // Special case: Drinks & Desserts redirects to coffee menu
       if (category.id === "drinks-desserts") {
-        if (typeof handlePageTransition === "function") {
-          handlePageTransition("coffee-menu.html");
-        } else {
-          window.location.href = "coffee-menu.html";
-        }
+        window.location.href = "coffee-menu.html";
         return;
       }
       selectCategory(category);
@@ -132,17 +128,9 @@ function setupFilterListeners() {
     btn.addEventListener("click", () => {
       const filter = btn.getAttribute("data-filter");
 
-      // If Drinks & Desserts, redirect to coffee menu with transition
+      // If Drinks & Desserts, redirect to coffee menu
       if (filter === ".filter-drinks-desserts") {
-        const transition = document.getElementById("pageTransition");
-        if (transition) {
-          transition.classList.add("active");
-          setTimeout(() => {
-            window.location.href = "coffee-menu.html";
-          }, 250);
-        } else {
-          window.location.href = "coffee-menu.html";
-        }
+        window.location.href = "coffee-menu.html";
         return;
       }
 
