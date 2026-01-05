@@ -32,6 +32,17 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body class="page-entering">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <img src="assets/rei_group.PNG" alt="REI Group" class="loading-logo" />
+        <div class="loading-progress-container">
+          <div class="loading-progress-bar" id="loadingProgressBar"></div>
+        </div>
+        <div class="loading-percentage" id="loadingPercentage">0%</div>
+      </div>
+    </div>
+
     <!-- Page Transition Overlay -->
     <div class="page-transition" id="pageTransition">
       <img src="assets/rei_group.PNG" alt="REI Group" />
@@ -69,6 +80,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="js/loading.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/page-transition.js"></script>
