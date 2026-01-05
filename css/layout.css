@@ -495,10 +495,14 @@
 /* Keep footer at bottom aligned with image items */
 .menu-item.no-image .menu-item-footer {
   margin-top: auto;
+  width: 100%;
 }
 
 .menu-item.no-image .menu-item-price {
   text-align: center;
+}
+
+.menu-item.no-image .menu-item-actions {
   width: 100%;
 }
 
@@ -506,6 +510,7 @@
 @media (max-width: 768px) {
   .menu-item.no-image .menu-item-content {
     min-height: calc(150px + 130px);
+    padding: var(--spacing-sm); /* Match regular items on tablet */
   }
   .menu-item.no-image .menu-item-name {
     padding-top: 40px;
@@ -515,6 +520,7 @@
 @media (max-width: 480px) {
   .menu-item.no-image .menu-item-content {
     min-height: calc(120px + 120px);
+    padding: 0.75rem; /* Match regular items on mobile */
   }
   .menu-item.no-image .menu-item-name {
     padding-top: 30px;

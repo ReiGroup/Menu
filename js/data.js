@@ -17,7 +17,7 @@ const coffeeMenuData = {
       image: "../assets/cold-drinks.jpeg",
     },
     { id: "add-on", name: "Add-On" },
-    { id: "shakes", name: "Shakes" },
+    { id: "shakes", name: "Shakes", image: "../assets/shakes.jpeg" },
     {
       id: "refreshers",
       name: "Refreshers",
@@ -813,15 +813,24 @@ const coffeeMenuData = {
 // Restaurant Menu Data
 const restoMenuData = {
   categories: [
-    { id: "breakfast", name: "Breakfast" },
-    { id: "starters", name: "Starters" },
-    { id: "salads", name: "Salads" },
-    { id: "pizza", name: "Pizza" },
-    { id: "sandwiches-burgers", name: "Sandwiches & Burgers" },
-    { id: "main-dish", name: "Main Dish" },
+    { id: "breakfast", name: "Breakfast", image: "../assets/breakfast.jpeg" },
+    { id: "starters", name: "Starters", image: "../assets/starters.jpeg" },
+    { id: "salads", name: "Salads", image: "../assets/salads.jpeg" },
+    { id: "pizza", name: "Pizza", image: "../assets/pizza.jpeg" },
+    { id: "pasta", name: "Pasta" },
+    {
+      id: "sandwiches-burgers",
+      name: "Sandwiches & Burgers",
+      image: "../assets/sandwiches-and-burgers.jpeg",
+    },
+    { id: "main-dish", name: "Main Dish", image: "../assets/main-dish.jpeg" },
     { id: "add-on-resto", name: "Add-On" },
-    { id: "shisha", name: "Shisha" },
-    { id: "drinks-desserts", name: "Drinks & Desserts" },
+    { id: "shisha", name: "Shisha", image: "../assets/shisha.jpeg" },
+    {
+      id: "drinks-desserts",
+      name: "Drinks & Desserts",
+      image: "../assets/drinks-and-desserts.jpeg",
+    },
   ],
   items: [
     // BREAKFAST
@@ -995,6 +1004,7 @@ const restoMenuData = {
       price: 9.0,
       category: "salads",
       ingredients: "Lettuce, croutons, parmesan & house Caesar sauce",
+      image: "../assets/caesar-royal-chicken.jpeg",
     },
     {
       id: "caesar-royal-chicken",
@@ -1029,6 +1039,7 @@ const restoMenuData = {
       price: 10.0,
       category: "pizza",
       ingredients: "Tomato sauce, mozzarella & basil",
+      image: "../assets/margherita.jpeg",
     },
     {
       id: "vegetariana",
@@ -1037,6 +1048,7 @@ const restoMenuData = {
       category: "pizza",
       ingredients:
         "Zucchini, eggplant, bell peppers, mushroom, tomato sauce & mozzarella",
+      image: "../assets/Vegetariana.jpeg",
     },
     {
       id: "quattro-formaggi",
@@ -1044,6 +1056,7 @@ const restoMenuData = {
       price: 12.0,
       category: "pizza",
       ingredients: "Mozzarella, gorgonzola, parmesan & formaggio duro",
+      image: "../assets/quattro-fromaggi.jpeg",
     },
     {
       id: "diavola-resto",
@@ -1051,6 +1064,7 @@ const restoMenuData = {
       price: 14.0,
       category: "pizza",
       ingredients: "Tomato sauce, salami picante & mozzarella",
+      image: "../assets/diavola.jpeg",
     },
 
     // SANDWICHES & BURGERS
@@ -1146,21 +1160,21 @@ const restoMenuData = {
       id: "linguini-alfredo",
       name: "Linguini Alfredo",
       price: 11.0,
-      category: "main-dish",
+      category: "pasta",
       image: "../assets/linguini-alfredo.jpeg",
     },
     {
       id: "penne-arrabbiata",
       name: "Penne Arrabbiata",
       price: 8.0,
-      category: "main-dish",
+      category: "pasta",
       image: "../assets/penne-arrabbiata.jpeg",
     },
     {
       id: "linguini-pesto",
       name: "Linguini Pesto",
       price: 11.0,
-      category: "main-dish",
+      category: "pasta",
       image: "../assets/linguini-pesto.jpeg",
     },
 
