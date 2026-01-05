@@ -108,7 +108,7 @@ body:has(.index-container) {
 }
 
 .footer-credit a {
-  color: var(--black);
+  color: var(--title-color);
   text-decoration: none;
   transition: var(--transition-fast);
 }
