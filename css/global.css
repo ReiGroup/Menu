@@ -236,6 +236,16 @@ body.page-ready {
   animation: fadeIn 0.8s ease-out;
 }
 
+/* Footer copyright line: keep on one line + slightly smaller */
+.copyright-line {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.64rem, 2.6vw, 0.82rem);
+}
+
 .slide-in-left {
   animation: slideInLeft 0.8s ease-out;
 }
