@@ -545,6 +545,12 @@ const coffeeMenuData = {
       category: "spirits-bottles",
     },
     {
+      id: "chivas-regal",
+      name: "Chivas Regal",
+      price: 110.0,
+      category: "spirits-bottles",
+    },
+    {
       id: "stolichnaya-red-bottle",
       name: "Stolichnaya Red",
       price: 30.0,
@@ -583,19 +589,19 @@ const coffeeMenuData = {
     {
       id: "ixsir-altitudes-red-wine",
       name: "Ixsir Altitudes Red Wine",
-      price: 22.0,
+      price: 24.0,
       category: "spirits-bottles",
     },
     {
       id: "ixsir-altitudes-rose-wine-bottle",
       name: "Ixsir Altitudes Rosé Wine",
-      price: 22.0,
+      price: 24.0,
       category: "spirits-bottles",
     },
     {
       id: "ixsir-altitudes-white-wine",
       name: "Ixsir Altitudes White Wine",
-      price: 22.0,
+      price: 24.0,
       category: "spirits-bottles",
     },
     {
@@ -817,7 +823,7 @@ const restoMenuData = {
     { id: "starters", name: "Starters", image: "../assets/starters.jpeg" },
     { id: "salads", name: "Salads", image: "../assets/salads.jpeg" },
     { id: "pizza", name: "Pizza", image: "../assets/pizza.jpeg" },
-    { id: "pasta", name: "Pasta" },
+    { id: "pasta", name: "Pasta", image: "../assets/pasta.jpeg" },
     {
       id: "sandwiches-burgers",
       name: "Sandwiches & Burgers",
@@ -837,7 +843,7 @@ const restoMenuData = {
     {
       id: "dreamy-greek-yogurt",
       name: "Dreamy Greek Yogurt & Granola",
-      price: 7.0,
+      price: 8.0,
       category: "breakfast",
       ingredients: "Seasonal fruits & honey",
       image: "../assets/dreamy-greek-yogurt.jpeg",
@@ -845,7 +851,7 @@ const restoMenuData = {
     {
       id: "halloumi-pesto",
       name: "Halloumi Pesto Excellence",
-      price: 7.0,
+      price: 8.0,
       category: "breakfast",
       ingredients: "Ciabatta bread with cucumber & tomato",
       image: "../assets/halloumi-pesto.jpeg",
@@ -939,17 +945,17 @@ const restoMenuData = {
     {
       id: "smoked-salmon-carpaccio",
       name: "Smoked Salmon Carpaccio",
-      price: 14.0,
+      price: 15.0,
       category: "starters",
       ingredients: "Dill, capers, lemon, olive oil & toast",
       image: "../assets/smoked-salmon-carpaccio.jpeg",
     },
     {
-      id: "tequenos",
-      name: "Tequeños",
+      id: "mozzarella-sticks",
+      name: "Mozzarella Sticks",
       price: 7.0,
       category: "starters",
-      ingredients: "Venezuelan cheese sticks with honey mustard dip",
+      ingredients: "Breaded mozzarella sticks with marinara sauce",
     },
     {
       id: "truffle-fries-resto",
@@ -973,9 +979,16 @@ const restoMenuData = {
       image: "../assets/edamame.jpeg",
     },
     {
+      id: "tenders",
+      name: "Tenders",
+      price: 6.0,
+      category: "starters",
+      ingredients: "5 pcs with cup honey mustard sauce",
+    },
+    {
       id: "dumplings-shrimps",
       name: "Dumplings Shrimps",
-      price: 12.0,
+      price: 13.0,
       category: "starters",
     },
 
@@ -992,7 +1005,7 @@ const restoMenuData = {
     {
       id: "quinoa-bowl",
       name: "Quinoa Bowl",
-      price: 11.0,
+      price: 12.0,
       category: "salads",
       ingredients:
         "Mixed greens, cherry tomato, dry figs, cranberry, almonds & citrus dressing",
@@ -1026,7 +1039,7 @@ const restoMenuData = {
     {
       id: "fusion-crab-salad",
       name: "Fusion Crab Salad",
-      price: 9.0,
+      price: 12.0,
       category: "salads",
       ingredients: "Carrot, cucumber, strawberry, cabbage & Asian dressing",
       image: "../assets/fusion-crab-salad.jpeg",
@@ -1044,7 +1057,7 @@ const restoMenuData = {
     {
       id: "vegetariana",
       name: "Vegetariana",
-      price: 11.0,
+      price: 12.0,
       category: "pizza",
       ingredients:
         "Zucchini, eggplant, bell peppers, mushroom, tomato sauce & mozzarella",
@@ -1053,7 +1066,7 @@ const restoMenuData = {
     {
       id: "quattro-formaggi",
       name: "Quattro Formaggi",
-      price: 12.0,
+      price: 13.0,
       category: "pizza",
       ingredients: "Mozzarella, gorgonzola, parmesan & formaggio duro",
       image: "../assets/quattro-fromaggi.jpeg",
@@ -1103,6 +1116,30 @@ const restoMenuData = {
       ingredients:
         "Angus beef, cheddar cheese, lettuce, pickles, onion, tomato & house burger sauce",
       image: "../assets/reis-prime-burger.jpeg",
+    },
+    {
+      id: "mushroom-burger",
+      name: "Mushroom Burger",
+      price: 13.0,
+      category: "sandwiches-burgers",
+      ingredients: "Gravy mushroom sauce, Beef patty, Emmental cheese, Buns",
+      image: "../assets/mushroom-burger.jpeg",
+    },
+    {
+      id: "truffle-burger",
+      name: "Truffle Burger",
+      price: 13.0,
+      category: "sandwiches-burgers",
+      ingredients: "Truffle mayo sauce, Mushrooms, Beef patty, Buns",
+      image: "../assets/truffle-burger.jpeg",
+    },
+    {
+      id: "golden-crispy-burger",
+      name: "Golden Crispy Burger",
+      price: 12.0,
+      category: "sandwiches-burgers",
+      ingredients:
+        "Honey mustard sauce, Chicken crispy, Cheddar slice, Pickles",
     },
 
     // MAIN DISH
@@ -1176,6 +1213,22 @@ const restoMenuData = {
       price: 11.0,
       category: "pasta",
       image: "../assets/linguini-pesto.jpeg",
+    },
+    {
+      id: "truffle-pasta",
+      name: "Truffle Pasta",
+      price: 12.0,
+      category: "pasta",
+      ingredients: "Mushrooms, With truffle white sauce, Penne pasta",
+      image: "../assets/truffle-pasta.jpeg",
+    },
+    {
+      id: "shrimp-rose-pasta",
+      name: "Shrimp Rose Pasta",
+      price: 13.0,
+      category: "pasta",
+      ingredients: "Rose sauce, Penne pasta, Shrimps",
+      image: "../assets/Shrimp-rose-pasta.jpeg",
     },
 
     // SHISHA
