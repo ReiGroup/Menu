@@ -398,7 +398,33 @@ function showCartNotification(itemName) {
   }, 2000);
 }
 
+// Set responsive zoom for Google Maps
+function setMapZoom() {
+  const mapIframe = document.getElementById("restaurantMap");
+  if (!mapIframe) return;
+
+  // Check if mobile (screen width < 768px)
+  const isMobile = window.innerWidth < 768;
+  const zoom = isMobile ? 16.6 : 18;
+
+  // Update the map URL with the correct zoom
+  const baseUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.5!2d35.883744!3d34.338469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIwJzE4LjUiTiAzNcKwNTMnMDEuNSJF!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus&t=k";
+
+  // Use a simpler format that allows zoom control
+  const newUrl = `https://www.google.com/maps?q=34.338469,35.883744&hl=en&z=${zoom}&output=embed&t=k`;
+  mapIframe.src = newUrl;
+}
+
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
   initCart();
+  setMapZoom();
+
+  // Update zoom on window resize
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setMapZoom, 250);
+  });
 });
