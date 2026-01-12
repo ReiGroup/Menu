@@ -717,25 +717,25 @@ const coffeeMenuData = {
     {
       id: "eclair-strawberry",
       name: "Eclair (Strawberry)",
-      price: 4.0,
+      price: 5.0,
       category: "desserts",
     },
     {
       id: "eclair-lotus",
       name: "Eclair (Lotus)",
-      price: 4.0,
+      price: 5.0,
       category: "desserts",
     },
     {
       id: "eclair-caramel",
       name: "Eclair (Caramel)",
-      price: 4.0,
+      price: 5.0,
       category: "desserts",
     },
     {
       id: "eclair-chocolate",
       name: "Eclair (Chocolate)",
-      price: 4.0,
+      price: 5.0,
       category: "desserts",
     },
     {
@@ -813,6 +813,60 @@ const coffeeMenuData = {
     },
     { id: "muffins", name: "Muffins", price: 3.0, category: "desserts" },
     { id: "cookies", name: "Cookies", price: 2.0, category: "desserts" },
+    {
+      id: "bahamas-cake",
+      name: "Bahamas Cake",
+      price: 5.0,
+      category: "desserts",
+    },
+    {
+      id: "fudge-cake",
+      name: "Fudge Cake",
+      price: 5.0,
+      category: "desserts",
+    },
+    {
+      id: "biscuit-au-chocolat",
+      name: "Biscuit au Chocolat",
+      price: 5.0,
+      category: "desserts",
+    },
+    {
+      id: "trio-chocolate",
+      name: "Trio Chocolate",
+      price: 5.0,
+      category: "desserts",
+    },
+    {
+      id: "strawberry-cheesecake",
+      name: "Strawberry Cheesecake",
+      price: 6.0,
+      category: "desserts",
+    },
+    {
+      id: "oreo-cheesecake",
+      name: "Oreo Cheesecake",
+      price: 6.0,
+      category: "desserts",
+    },
+    {
+      id: "blueberry-cheesecake",
+      name: "Blueberry Cheesecake",
+      price: 6.0,
+      category: "desserts",
+    },
+    {
+      id: "apple-pie",
+      name: "Apple Pie",
+      price: 6.0,
+      category: "desserts",
+    },
+    {
+      id: "tiramissu-can",
+      name: "Tiramissu Can",
+      price: 6.0,
+      category: "desserts",
+    },
   ],
 };
 
@@ -893,12 +947,14 @@ const restoMenuData = {
       name: "Croissant (Zaatar)",
       price: 3.0,
       category: "breakfast",
+      image: "../assets/croissant-zaatar.jpeg",
     },
     {
       id: "croissant-cheese-resto",
       name: "Croissant (Cheese)",
       price: 4.0,
       category: "breakfast",
+      image: "../assets/croissant-cheese.jpeg",
     },
     {
       id: "croissant-almond-resto",
@@ -923,6 +979,7 @@ const restoMenuData = {
       name: "Croissant (Triple Chocolate)",
       price: 4.0,
       category: "breakfast",
+      image: "../assets/croissant-triple-chocolate.jpeg",
     },
 
     // STARTERS
@@ -956,6 +1013,7 @@ const restoMenuData = {
       price: 7.0,
       category: "starters",
       ingredients: "Breaded mozzarella sticks with marinara sauce",
+      image: "../assets/mozzarella-sticks.jpeg",
     },
     {
       id: "truffle-fries-resto",
@@ -981,15 +1039,17 @@ const restoMenuData = {
     {
       id: "tenders",
       name: "Tenders",
-      price: 6.0,
+      price: 8.0,
       category: "starters",
-      ingredients: "5 pcs with cup honey mustard sauce",
+      ingredients: "4 pcs with cup honey mustard sauce",
+      image: "../assets/tenders.jpeg",
     },
     {
       id: "dumplings-shrimps",
       name: "Dumplings Shrimps",
       price: 13.0,
       category: "starters",
+      image: "../assets/dumplings-shrimps.jpeg",
     },
 
     // SALADS
@@ -1140,6 +1200,7 @@ const restoMenuData = {
       category: "sandwiches-burgers",
       ingredients:
         "Honey mustard sauce, Chicken crispy, Cheddar slice, Pickles",
+      image: "../assets/golden-crispy-burger.jpeg",
     },
 
     // MAIN DISH
