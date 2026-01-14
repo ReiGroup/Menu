@@ -928,7 +928,7 @@ const restoMenuData = {
     {
       id: "fluffy-pancakes",
       name: "Fluffy Pancakes",
-      price: 7.0,
+      price: 10.0,
       category: "breakfast",
       ingredients:
         "Chocolate syrup, banana, strawberry, whipped cream, maple syrup",
@@ -937,7 +937,7 @@ const restoMenuData = {
     {
       id: "steak-eggs",
       name: "Mouth-watering Steak & Eggs",
-      price: 11.0,
+      price: 12.0,
       category: "breakfast",
       ingredients: "Juicy seared steak with perfectly cooked eggs",
       image: "../assets/steak-eggs.jpeg",
@@ -1018,7 +1018,7 @@ const restoMenuData = {
     {
       id: "truffle-fries-resto",
       name: "Truffle Fries",
-      price: 7.0,
+      price: 8.0,
       category: "starters",
       image: "../assets/truffle-fries-resto.jpeg",
     },
@@ -1153,7 +1153,7 @@ const restoMenuData = {
     {
       id: "mighty-steak-sandwich",
       name: "Mighty Steak Sandwich",
-      price: 12.0,
+      price: 13.0,
       category: "sandwiches-burgers",
       ingredients:
         "Beef tenderloin, sourdough, onions, bell peppers, emmental & steak sauce",
@@ -1188,7 +1188,7 @@ const restoMenuData = {
     {
       id: "truffle-burger",
       name: "Truffle Burger",
-      price: 13.0,
+      price: 14.0,
       category: "sandwiches-burgers",
       ingredients: "Truffle mayo sauce, Mushrooms, Beef patty, Buns",
       image: "../assets/truffle-burger.jpeg",
@@ -1215,7 +1215,7 @@ const restoMenuData = {
     {
       id: "creamy-chicken-mushroom",
       name: "Creamy Chicken Mushroom",
-      price: 13.0,
+      price: 14.0,
       category: "main-dish",
       ingredients: "Grilled chicken breast, mushroom sauce & fries",
       image: "../assets/creamy-chicken-mushroom.jpeg",
@@ -1264,21 +1264,21 @@ const restoMenuData = {
     {
       id: "penne-arrabbiata",
       name: "Penne Arrabbiata",
-      price: 8.0,
+      price: 9.0,
       category: "pasta",
       image: "../assets/penne-arrabbiata.jpeg",
     },
     {
       id: "linguini-pesto",
       name: "Linguini Pesto",
-      price: 11.0,
+      price: 12.0,
       category: "pasta",
       image: "../assets/linguini-pesto.jpeg",
     },
     {
       id: "truffle-pasta",
       name: "Truffle Pasta",
-      price: 12.0,
+      price: 14.0,
       category: "pasta",
       ingredients: "Mushrooms, With truffle white sauce, Penne pasta",
       image: "../assets/truffle-pasta.jpeg",
@@ -1286,7 +1286,7 @@ const restoMenuData = {
     {
       id: "shrimp-rose-pasta",
       name: "Shrimp Rose Pasta",
-      price: 13.0,
+      price: 15.0,
       category: "pasta",
       ingredients: "Rose sauce, Penne pasta, Shrimps",
       image: "../assets/Shrimp-rose-pasta.jpeg",
