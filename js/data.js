@@ -86,13 +86,13 @@ const coffeeMenuData = {
     {
       id: "cappuccino",
       name: "Cappuccino",
-      price: 4.0,
+      price: 5.0,
       category: "hot-beverages",
     },
     {
       id: "cafe-latte",
       name: "Cafe Latte",
-      price: 4.0,
+      price: 5.0,
       category: "hot-beverages",
     },
     {
@@ -811,8 +811,8 @@ const coffeeMenuData = {
       price: 6.0,
       category: "desserts",
     },
-    { id: "muffins", name: "Muffins", price: 3.0, category: "desserts" },
-    { id: "cookies", name: "Cookies", price: 2.0, category: "desserts" },
+    { id: "muffins", name: "Muffins", price: 4.0, category: "desserts" },
+    { id: "cookies", name: "Cookies", price: 3.0, category: "desserts" },
     {
       id: "bahamas-cake",
       name: "Bahamas Cake",
