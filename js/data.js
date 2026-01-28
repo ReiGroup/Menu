@@ -346,7 +346,7 @@ const coffeeMenuData = {
     {
       id: "homemade-ice-tea-peach",
       name: "Homemade Ice Tea Peach",
-      price: 3.0,
+      price: 5.0,
       category: "refreshers",
     },
     {
@@ -1002,7 +1002,7 @@ const restoMenuData = {
     {
       id: "smoked-salmon-carpaccio",
       name: "Smoked Salmon Carpaccio",
-      price: 15.0,
+      price: 18.0,
       category: "starters",
       ingredients: "Dill, capers, lemon, olive oil & toast",
       image: "../assets/smoked-salmon-carpaccio.jpeg",
@@ -1047,7 +1047,7 @@ const restoMenuData = {
     {
       id: "dumplings-shrimps",
       name: "Dumplings Shrimps",
-      price: 13.0,
+      price: 14.5,
       category: "starters",
       image: "../assets/dumplings-shrimps.jpeg",
     },
@@ -1207,7 +1207,7 @@ const restoMenuData = {
     {
       id: "steak-fries",
       name: "Steak & Fries",
-      price: 18.0,
+      price: 19.0,
       category: "main-dish",
       ingredients: "Mushroom or pepper sauce",
       image: "../assets/steak-fries.jpeg",
@@ -1215,7 +1215,7 @@ const restoMenuData = {
     {
       id: "creamy-chicken-mushroom",
       name: "Creamy Chicken Mushroom",
-      price: 14.0,
+      price: 15.0,
       category: "main-dish",
       ingredients: "Grilled chicken breast, mushroom sauce & fries",
       image: "../assets/creamy-chicken-mushroom.jpeg",
@@ -1231,7 +1231,7 @@ const restoMenuData = {
     {
       id: "grilled-salmon-miso",
       name: "Grilled Salmon Miso",
-      price: 22.0,
+      price: 23.0,
       category: "main-dish",
       ingredients: "With sautéed vegetables",
       image: "../assets/grilled-salmon-miso.jpeg",
@@ -1257,21 +1257,21 @@ const restoMenuData = {
     {
       id: "linguini-alfredo",
       name: "Linguini Alfredo",
-      price: 11.0,
+      price: 15.0,
       category: "pasta",
       image: "../assets/linguini-alfredo.jpeg",
     },
     {
       id: "penne-arrabbiata",
       name: "Penne Arrabbiata",
-      price: 9.0,
+      price: 10.0,
       category: "pasta",
       image: "../assets/penne-arrabbiata.jpeg",
     },
     {
       id: "linguini-pesto",
       name: "Linguini Pesto",
-      price: 12.0,
+      price: 13.0,
       category: "pasta",
       image: "../assets/linguini-pesto.jpeg",
     },
